@@ -7,7 +7,8 @@
         "resort" : "Emerald Bay, 3 stars",
         "perPerson" : "799.99",
         "image" : "reef1.jpg",
-        "description" : "<p>Gale Reef Sed et augue lorem."
+        "description" : "<p>Gale Reef Sed et augue lorem.",
+        "__v": 0
     }, {
         "code" : "DAWR210315",
         "name" : "Dawson's Reef",
@@ -16,7 +17,8 @@
         "resort" : "Blue Lagoon, 4 stars",
         "perPerson" : "1199.99",
         "image" : "reef2.jpg",
-        "description" : " Dawson's Reef Integer magna leo."
+        "description" : " Dawson's Reef Integer magna leo.",
+        "__v": 0
     }, {
         "code" : "CLAR210621",
         "name" : "Claire's Reef",
@@ -25,6 +27,7 @@
         "resort" : "Coral Sands, 5 stars",
         "perPerson" : "1999.99",
         "image" : "reef3.jpg",
-        "description" : "Claire's Reef Donec sed felis risus."
+        "description" : "Claire's Reef Donec sed felis risus.",
+        "__v": 0
     }
 ]
