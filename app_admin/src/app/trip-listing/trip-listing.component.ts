@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { TripCardComponent } from '../trip-card/trip-card.component';
 import { AuthenticationService } from '../services/authentication.service';

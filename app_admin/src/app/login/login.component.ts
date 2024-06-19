@@ -42,7 +42,7 @@ public onLoginSubmit(): void {
 // Handle the login process
 private doLogin(): void {
   this.authenticationService.login(this.credentials).subscribe({
-    next: () => this.router.navigateByUrl('/list-trips'), // Navigate to home or desired route
+    next: () => this.router.navigateByUrl(''), // Navigate to home or desired route
     error: (err) => this.formError = err.error.message || 'Login failed'
   });
  }

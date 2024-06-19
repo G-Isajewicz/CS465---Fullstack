@@ -41,7 +41,7 @@ export class EditTripComponent implements OnInit {
 
     this.editForm = this.formBuilder.group({
       _id:[],
-      code: ['', Validators.required],
+      code: [tripCode, Validators.required],
       name: ['', Validators.required],
       length: ['', Validators.required],
       start: ['', Validators.required],
@@ -77,7 +77,7 @@ export class EditTripComponent implements OnInit {
         .subscribe({
           next:(value:any) => {
             console.log(value);
-            this.router.navigate(['']);
+            this.router.navigate(['list-trips']);
           },
           error: (error:any) => {
             console.log('Error: ' + error);

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
 import { TripDataService } from '../services/trip-data.service';
-
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class AddTripComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private tripService: TripDataService,
-    
+    private authenticationService: AuthenticationService
    ) { }
 
 
@@ -39,7 +39,9 @@ export class AddTripComponent implements OnInit {
     })
   }
 
-
+  public isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
+  }
 
   public onSubmit() {
     this.submitted = true;
@@ -48,7 +50,7 @@ export class AddTripComponent implements OnInit {
       .subscribe( {
         next: (data: any) => {
         console.log(data);
-        this.router.navigate(['']);
+        this.router.navigate(['list-trips']);
       },
       error: (error: any) => {
       console.log('Error: ' + error);

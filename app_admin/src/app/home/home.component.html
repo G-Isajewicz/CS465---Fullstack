@@ -1,7 +1,19 @@
 
 
 <div class="container" *ngIf="!isLoggedIn()">
+    <h1>
+        Welcome to Travlr Getaways!
+    </h1>
     <h2>
         Please Login to continue
     </h2>
+    <a routerLink="login"><div class="button">Login</div></a>
  </div> 
+ <div class="button-container" *ngIf="isLoggedIn()">
+    <h2>
+        Welcome Travlr Getaways Admin!
+    </h2>
+    <a routerLink="list-trips"><div class="button">View Trips</div></a>
+    <a routerLink="add-trip"><div class="button">Add a Trip</div></a>
+    <a routerLink="" (click)="logout()"><div class="button">Logout</div></a>
+</div>

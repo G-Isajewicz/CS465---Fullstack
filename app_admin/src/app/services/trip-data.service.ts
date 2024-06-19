@@ -1,10 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError } from 'rxjs';
+import { Trip } from '../models/trip';
 import { AuthResponse } from '../models/authresponse';
 import { User } from '../models/user';
-import { Trip } from '../models/trip';
 import { BROWSER_STORAGE } from '../storage';
 
 @Injectable({
@@ -12,16 +12,28 @@ import { BROWSER_STORAGE } from '../storage';
 })
 export class TripDataService {
   constructor(private http: HttpClient,
-    @Inject(BROWSER_STORAGE) private storage: Storage)
+    @Inject(BROWSER_STORAGE) private storage: Storage,
+    )
    { }
 
   private url = 'http://localhost:3000/api';
 
-  getTrips() : Observable<Trip[]> {
+  // Create headers for authorization token 
+  private createHeaders(): HttpHeaders {
+    const token = this.storage.getItem('travlr-token');
+    return new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Authorization' : `Bearer ${token}`
+    });
+  }
+
+  public getTrips() : Observable<Trip[]> {
+    
     return this.http.get<Trip[]>(`${this.url}/trips`);
   }
   addTrip(formData: Trip) : Observable<Trip[]> {
-    return this.http.post<Trip[]>(`${this.url}/trips`, formData);
+    const headers = this.createHeaders(); // Get token
+    return this.http.post<Trip[]>(`${this.url}/trips`, formData, {headers});
   }
 
   getTrip(tripCode: string) : Observable<Trip[]> {
@@ -29,12 +41,13 @@ export class TripDataService {
   }
 
   updateTrip(formData: Trip) : Observable<Trip> {
-    return this.http.put<Trip>(`${this.url}/trips/${formData.code}`, formData);
+    const headers = this.createHeaders(); // Get token
+    return this.http.put<Trip>(`${this.url}/trips/${formData.code}`, formData, {headers});
   }
   
-  private handleError(error: any): Observable<never> {
+  private handleError(error: any): Promise<any> {
     console.error('Something has gone wrong', error);
-    return throwError(error.message || error);
+    return Promise.reject(error.message || error);
   }
 
   public makeAuthApiCall(urlPath: string, user: User): Observable<AuthResponse> {

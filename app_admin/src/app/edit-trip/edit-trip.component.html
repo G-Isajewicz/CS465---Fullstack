@@ -27,7 +27,7 @@
      <div class="form-group">
       <label>Length:</label>
       <input type="text" formControlName="length"
-       placeholder="Name" class="form-control"
+       placeholder="Length" class="form-control"
 [ngClass]="{ 'is-invalid': submitted && f['length'].errors }">
 <div *ngIf="submitted && f['length'].errors">
 <div *ngIf="f['length'].errors?.['required']">
@@ -60,7 +60,7 @@
      <div class="form-group">
       <label>Per Person:</label>
       <input type="text" formControlName="perPerson"
-       placeholder="Perperson" class="form-control"
+       placeholder="Per person cost" class="form-control"
 [ngClass]="{ 'is-invalid': submitted && f['perPerson'].errors }">
 <div *ngIf="submitted && f['perPerson'].errors">
 <div *ngIf="f['perPerson'].errors?.['required']">

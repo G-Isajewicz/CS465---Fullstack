@@ -1,0 +1,20 @@
+.nav-item.nav-link, .btn {
+    color: white !important;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px; /* Adjusted padding to avoid line break */
+    text-align: center;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.nav-item.nav-link, .btn:hover {
+    background-color: #1c6dc4;
+    color: white !important;
+}
+
+.ms-auto {
+    display: flex;
+    align-items: center;
+}

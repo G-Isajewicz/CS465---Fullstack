@@ -19,12 +19,12 @@
             </a>
         </div>
     </div>
-    <div class="navbar-end ms-auto">
-        <a class="navbar-item" routerLink="login" *ngIf="!isLoggedIn()">
-            <span class="has-icon-left" >Log In</span>
+    <div class="ms-auto">
+        <a class="nav-item nav-link btn btn-primary mx-2" routerLink="login" *ngIf="!isLoggedIn()">
+            Log In
         </a>
-        <a class="navbar-item" (click)="onLogout()" *ngIf="isLoggedIn()">
-            <span class="has-icon-left">Log Out</span>
-        </a>
+        <button class="btn btn-primary nav-item nav-link mx-2" (click)="onLogout()" *ngIf="isLoggedIn()">
+            Log Out
+        </button>
     </div>
 </nav>

@@ -174,7 +174,7 @@ const tripsFindByCode = async (req, res) => {
 const tripsAddTrip = async (req, res) => {
     try {
         const user = await getUser(req, res);
-        if (!user) return;
+        if (!user) {return;};
 
         const trip = new Trip({
             code: req.body.code,
@@ -252,5 +252,6 @@ module.exports = {
     tripsList,
     tripsFindByCode,
     tripsAddTrip,
-    tripsUpdateTrip
+    tripsUpdateTrip,
+    getUser
 };
