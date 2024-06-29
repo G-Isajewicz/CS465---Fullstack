@@ -15,15 +15,14 @@ CS-465 Full Stack Development with MEAN
 
   **Testing**
       In a fullstack application, a strong understanding of the methods, endpoints, and security is crucial for developing and testing robust and secure APIs. Firstly, The actions performed on resources such as a database through the API are defined within the HTTP methods: 
-      -GET: Used to retrieve data from a server or database
-      -POST: Used to send data to create a new resource or entry into a database
-      -PUT: Used for updating existing data, OR creates a new entry if none exists
-      -DELETE: Used to delete resources 
-      -PATCH: Used to partially update a resource
-      -OPTIONS: Returns HTTP methods supported in the server
+      *GET: Used to retrieve data from a server or database
+      *POST: Used to send data to create a new resource or entry into a database
+      *PUT: Used for updating existing data, OR creates a new entry if none exists
+      *DELETE: Used to delete resources 
+      *PATCH: Used to partially update a resource
+      *OPTIONS: Returns HTTP methods supported in the server
   Within this application, the HTTP methods used are GET, POST, PUT, and DELETE. It is important that the appropriate method be used to perform the desired operation. These methods can operate on different endpoints as needed. For example, to retrieve a list of trips - assuming an API endpoint exists called 'Trips' that contains record of all Trips - 'GET /Trips' can be used to interact with that endpoint. Furthermore, a single trip can be found within that endpoint (assuming functionality has been implemented within the endpoint) based on some search criteria such as '_ID' by expanding the reference to GET /Trips/{_ID}. 
-  
-    Security in APIs is critical to protect the integrity of the data contained within or interacted with. The implementation of robust security features and practices including Triple A - Authentication, Authorization, Accounting -, parameterization of queries, and encryption can all help to maintain robust security within our applciation. The security of an application and API should be tested with vulnerability assessments, code reviews, automated testing, and penetration testing in order to mitigate potential security threats. 
+   Security in APIs is critical to protect the integrity of the data contained within or interacted with. The implementation of robust security features and practices including Triple A - Authentication, Authorization, Accounting -, parameterization of queries, and encryption can all help to maintain robust security within our applciation. The security of an application and API should be tested with vulnerability assessments, code reviews, automated testing, and penetration testing in order to mitigate potential security threats. 
     Testing APIs can be conducted in a number of ways according to the purpose. The functionality of an individual endpoint can be tested with unit tests and other automated or non-automated methods to ensure they perform as expected. Integration testing of APIs is also critical to ensure that the APIs and components within the application interact properly with eachother. Security testing should be included in each of these - and really throughout the entire application. Robust testing includes both positive and negative tests - not only ensuring that the encryption ok tokenization is implemented and decrypted properly, but that the application properly and safely handles failures such as an invalid token. In this application, testing of API interactions and method calls was conducted using postman.
 
   **Reflection**
