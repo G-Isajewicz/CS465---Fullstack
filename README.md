@@ -1,7 +1,7 @@
 # CS465---Fullstack
 CS-465 Full Stack Development with MEAN
 
-##**Architecture**
+## Architecture
   This application was built using MongoDB, Express, Angular, and Node - also known as a MEAN stack. Within the MEAN stack, Node.js will function as the runtime environment for the webpage. The application will comprise of two sides, a customer-facing side, and an administrator single-page application (SPA). 
   
   The administrator page was created as a single-page application - SPA - using Angular in order to allow the performance of various administrative duties. Access to the administrator SPA will be controlled through an authentication login method. Once an administrator has been authenticated, the administrator will have access to the page for the purpose of modifying the content that the customer sees. 
